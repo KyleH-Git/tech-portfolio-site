@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevSeeker - Find a developer today!</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to DevSeeker</h1>
+  </header>
+  <nav>
+    <a href="/">Homepage</a>
+    {{#if loggedIn}}
+    <button id="logout" class="logout-btn">Logout</button>
+    {{/if}}
+  </nav>
+  <main>
+    <div class="portfolio-data">
+      {{{body}}}
+    </div>
+  </main>
+  {{#if loggedIn}}
+  <script src="./public/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
