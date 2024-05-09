@@ -9,7 +9,7 @@ const seedDatabase= async ()=>{
     await sequelize.sync({force:true});
     // inserts the user data into the database
     await User.bulkCreate(userData,{
-        individualHooks:true, //makes sure to execute the hooks in the model, specifically our password has
+        individualHooks:true, //makes sure to execute the hooks in the model, specifically our password
         returning: true, // returns the tables
     });
     process.exit(0);
