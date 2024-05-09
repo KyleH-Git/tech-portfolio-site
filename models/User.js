@@ -47,23 +47,23 @@ User.init ({
         allowNull: false,
         defaultValue: 'client',
     },
-    photoUrl: //profile photo url
+    photo_url: //profile photo url
     {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    yearsCoding: //years the dev has been coding
+    years_coding: //years the dev has been coding
     {
         type: DataTypes.INTEGER,
         allowNull: true,
     },
-    stackType: //front end or back end experience
+    stack_type: //front end or back end experience
     {
         type: DataTypes.ENUM,
         values: ['frontend', 'backend', 'full-stack', ],
         allowNull: true,
     },
-    portfolioUrl: //link to portfolio
+    portfolio_url: //link to portfolio
     {
         type: DataTypes.STRING,
         allowNull: true,
