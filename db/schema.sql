@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS devSeeker_db;
+CREATE DATABASE devSeeker_db;
