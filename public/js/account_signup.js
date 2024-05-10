@@ -4,13 +4,17 @@ const signupHandler = async (event) => {
   const username = document.querySelector('#signup-username').value.trim();
   const email = document.querySelector('#signup-email').value.trim();
   const password = document.querySelector('#signup-password').value.trim();
-  const description = document.querySelector('#description').value.trim();
+  const role = document.querySelector('#role').value.trim();
+  const portfolio_url = document.querySelector('#portfolio_url').value.trim();
+  const stackType = document.querySelector('#code_type').value.trim();
+
+
 
 
   if (username && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password, description }),
+      body: JSON.stringify({ username, email, password, role, portfolio_url, stackType }),
       headers: { 'Content-Type': 'application/json' },
     });
 
