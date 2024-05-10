@@ -23,6 +23,16 @@ Developer.init ({
         values: ['frontend', 'backend', 'full-stack', ],
         allowNull: true,
     },
+    first_name:
+    {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    last_name:
+    {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     portfolio_url: //link to portfolio
     {
         type: DataTypes.STRING,
