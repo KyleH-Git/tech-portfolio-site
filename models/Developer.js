@@ -7,6 +7,13 @@ class Developer extends Model {}
 
 
 Developer.init ({
+    id: 
+    {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
     photo_url: //profile photo url
     {
         type: DataTypes.STRING,
@@ -37,6 +44,13 @@ Developer.init ({
     {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    account_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'account',
+          key: 'id',
+        }
     }
 },
 {

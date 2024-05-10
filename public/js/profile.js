@@ -23,7 +23,7 @@ const profileFormHandler = async (event) => {
   console.log(first_name, last_name, years_coding, stack_type, portfolio_url, photo_url)
   const response = await fetch('/api/users/profile', {
     method: 'POST',
-    body: JSON.stringify({ first_name, last_name, years_coding, stack_type, portfolio_url, photo_url }),
+    body: JSON.stringify({photo_url, years_coding, stack_type, first_name, last_name, portfolio_url}),
     headers: { 'Content-Type': 'application/json' },
   });
 

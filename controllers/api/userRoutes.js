@@ -18,6 +18,7 @@ router.post('/createAccount', async (req, res) => {
 });
 
 router.post('/profile', async (req, res) => {
+    console.log('profile route reached');
     try {
         const profileData = await Developer.create(req.body);
         console.log(profileData);
