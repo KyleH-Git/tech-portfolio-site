@@ -13,10 +13,7 @@
         <p>Occupation: {{role}}</p>
         <p>Stack specialty: {{stack-type}}</p>
         <p>Years of experience: {{years-coding}}</p>
-        <div class="form-data">
-            <label for="description">Description:</label>
-            <input type="text" name="description" id="description">
-        </div>
+        
 
     </div>
     <div>
@@ -28,39 +25,68 @@
     </div>
 
 </div>
+
+
+<form class="profile-data">
+    <div class="profile-form">
+        <h2>Input Developer info here!</h2>
+        <div class="form-data">
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName">
+        </div>
+        <div class="form-data">
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" id="lastName">
+        </div>
+        
+        <div class="form-data">
+            <label for="yearsExp">Years Coding:</label>
+            <select name="yearsExp" id="yearsCoding">
+                <option value="1">1+</option>
+                <option value="3">3+</option>
+                <option value="5">5+</option>
+                <option value="10">10+</option>
+                <option value="15">15+</option>
+                <option value="20">20+</option>
+            </select>
+        </div>
+        <div class="form-data">
+            <label for="stackType">Choose a stack type:</label>
+            <select name="stackType" id="stackType">
+                <option value="frontend">Front-End Development</option>
+                <option value="backend">Back-End Development</option>
+                <option value="full-stack">Full-Stack Development</option>
+            </select>
+        </div>
+        <div class="form-data">
+            <label for="portfolio_url">Portfolio URL:</label>
+            <input type="text" name="portfolioUrl" id="portfolioUrl">
+        </div>
+        <div class="form-data">
+            <label for="profie-pic">Upload a profile pic:</label>
+            <input type="text" name="photoUrl" id="photoUrl">
+        </div>
+        
+    </div>
+    <button type="submit">Submit</button>
+</form>
+   
 <script src="/js/profile.js"></script>
 
-<form>
-    <div class="form-data">
-                <label for="role"></label>
-                <input type="text" name="role" id="role">
-            </div>
-            <div class="form-data">
-                <label for="portfolio_url"></label>
-                <input type="text" name="portfolio_url" id="portfolio_url">
-            </div>
-            <div>
-                <select name="code-type" id="code-type"></select>
-                <option value="">Choose a specialty:</option>
-                <option value="Front-End">Front-End Development</option>
-                <option value="Back-end">Back-End Development</option>
-            </div>
+ {{!-- <aside class="dropdown-menu">
+        <select name="code-languages" id="code-languages" multiple>
+            <option value="">Select your code languages:</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="Nodejs">Nodejs</option>
+            <option value="SQL">SQL</option>
+            <option value="Express">Express</option>
+            <option value="React">React</option>
+            <option value="AI">AI</option>
 
-            {{!-- <aside class="dropdown-menu">
-                <select name="code-languages" id="code-languages" multiple>
-                    <option value="">Select your code languages:</option>
-                    <option value="HTML">HTML</option>
-                    <option value="CSS">CSS</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Python">Python</option>
-                    <option value="Java">Java</option>
-                    <option value="C++">C++</option>
-                    <option value="Nodejs">Nodejs</option>
-                    <option value="SQL">SQL</option>
-                    <option value="Express">Express</option>
-                    <option value="React">React</option>
-                    <option value="AI">AI</option>
-
-                </select>
-            </aside> --}}
-</form>
+        </select>
+    </aside> --}}

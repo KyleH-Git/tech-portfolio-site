@@ -14,7 +14,7 @@ Developer.init ({
     },
     years_coding: //years the dev has been coding
     {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true,
     },
     stack_type: //front end or back end experience

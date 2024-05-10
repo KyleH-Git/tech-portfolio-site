@@ -1,47 +1,46 @@
 // creating a widget to upload images
-var myWidget = cloudinary.createUploadWidget({
-    cloudName: 'dwiyfuh6h',
-    uploadPreset: 'vjiganr9'
-  }, (error, result) => {
-    if (!error && result && result.event === "success") {
-      console.log('Done! Here is the image info: ', result.info);
-    }
-  }
-  )
-  // adding functionality to the button to perform upload on click
-  document.getElementById("upload_widget").addEventListener("click", function () {
-    myWidget.open();
-  }, false);
+// var myWidget = cloudinary.createUploadWidget({
+//   cloudName: 'dwiyfuh6h',
+//   uploadPreset: 'vjiganr9'
+// }, (error, result) => {
+//   if (!error && result && result.event === "success") {
+//     console.log('Done! Here is the image info: ', result.info);
+//   }
+// });
+// adding functionality to the button to perform upload on click
 
-  // grabs values of inputs during signup and posts them to the server api route
-const signupHandler = async (event) => {
+
+console.log('js reached')
+const profileFormHandler = async (event) => {
   event.preventDefault();
-  const username = document.querySelector('#signup-username').value.trim();
-  const email = document.querySelector('#signup-email').value.trim();
-  const password = document.querySelector('#signup-password').value.trim();
-  const role = document.querySelector('#role').value.trim();
-  const portfolio_url = document.querySelector('#portfolio_url').value.trim();
-  const stackType = document.querySelector('#code_type').value.trim();
+  const first_name = document.querySelector('#firstName').value.trim();
+  const last_name = document.querySelector('#lastName').value.trim();
+  const years_coding = document.querySelector('#yearsCoding').value.trim();
+  const stack_type = document.querySelector('#stackType').value.trim();
+  const portfolio_url = document.querySelector('#portfolioUrl').value.trim();
+  const photo_url = document.querySelector('#photoUrl').value.trim();
 
+  console.log(first_name, last_name, years_coding, stack_type, portfolio_url, photo_url)
+  const response = await fetch('/api/users/profile', {
+    method: 'POST',
+    body: JSON.stringify({ first_name, last_name, years_coding, stack_type, portfolio_url, photo_url }),
+    headers: { 'Content-Type': 'application/json' },
+  });
 
-
-
-  if (username && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ username, email, password, role, portfolio_url, stackType }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Profile already exists. Log in or use a different email.');
-      
-    }
+  console.log(response);
+  if (response.ok) {
+    // If successful, redirect the browser to the profile page
+    document.location.replace('/profile');
+  } else {
+    alert('Profile not updated, please double check the form.');
   }
-};
+}
 
-document.getElementById("login").addEventListener("click", function () {
-  document.location.replace('/login');
- });
+document
+.querySelector('.profile-data')
+.addEventListener('submit', profileFormHandler);
+
+
+// document.getElementById("upload_widget").addEventListener("click", function () {
+//   myWidget.open();
+// }, false);
