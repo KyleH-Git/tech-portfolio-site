@@ -1,6 +1,9 @@
 <div class="signup-container">
     <div class="signup-card">
         <h2 class="signup-header">Signup here!</h2>
+        <div class="form-data">
+            <button class="login-btn" id="login">Login</button>
+        </div>
         <form class="signup-form">
             <div>
                 <label for="username">Username:</label>
@@ -15,10 +18,41 @@
                 <input class="form-input" type="password" id="signup-password" />
             </div>
             <div class="form-data">
-                <button class="signup-btn" type="submit">Signup</button>
+                <label for="role"></label>
+                <input type="text" name="role" id="role">
             </div>
-              <div class="form-data">
-                <button class="login-btn" id="login">Login</button>
+            <div class="form-data">
+                <label for="portfolio_url"></label>
+                <input type="text" name="portfolio_url" id="portfolio_url">
+            </div>
+            <div>
+                <select name="code-type" id="code-type"></select>
+                <option value="">Choose a specialty:</option>
+                <option value="Front-End">Front-End Development</option>
+                <option value="Back-end">Back-End Development</option>
+            </div>
+
+            {{!-- <aside class="dropdown-menu">
+                <select name="code-languages" id="code-languages" multiple>
+                    <option value="">Select your code languages:</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="Nodejs">Nodejs</option>
+                    <option value="SQL">SQL</option>
+                    <option value="Express">Express</option>
+                    <option value="React">React</option>
+                    <option value="AI">AI</option>
+
+                </select>
+            </aside> --}}
+
+            <div class="form-data signup-btn">
+                <button class="signup-btn" type="submit">Signup</button>
             </div>
         </form>
     </div>
+    <script src="/js/account_signup.js"></script>
