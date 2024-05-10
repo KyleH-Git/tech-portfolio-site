@@ -51,30 +51,12 @@ Account.init ({
     {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: 'client',
-    },
-    photo_url: //profile photo url
-    {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    years_coding: //years the dev has been coding
-    {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-    },
-    stack_type: //front end or back end experience
-    {
-        type: DataTypes.ENUM,
-        values: ['frontend', 'backend', 'full-stack', ],
-        allowNull: true,
-    },
-    portfolio_url: //link to portfolio
-    {
-        type: DataTypes.STRING,
-        allowNull: true,
+        validate: {
+            isIn: [['client', 'developer']]
+        }
     }
 },
+
 {
     hooks:
     {
