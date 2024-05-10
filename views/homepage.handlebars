@@ -3,9 +3,9 @@
 {{/each}}
 
 {{!-- Section for the search form/ An app.post will need to be made in the backend to handle this logic--}}
-  <section class="devSearch" id="devSearch">
+  <section class="dev-search" id="dev-search">
     <h2>Search Developers</h2>
-    <form id="searchForm" method="post" action="/search-devs">
+    <form id="search-form" method="post" action="/search-devs">
       {{!-- Name Section --}}
       <section>
         <label for="name">Search Developers by Name:</label>
@@ -37,7 +37,6 @@
       <section>
         <label for="stackType">Stack-type:</label>
         <select name="stackType" id="stackType">
-          <option value="">Any</option>
           <option value="Frontend">Front-end</option>
           <option value="Backend">Back-end</option>
           <option value="Full-stack">Full-stack</option>
@@ -47,10 +46,8 @@
     </form>
   </section>
 
-  {{!-- Profile Section --}}
-
     {{!-- Profile Section --}}
-    <section id="profileSection" class="profileSection">
+    <section id="profile-section" class="profile-section">
       <h2>Developer Profiles</h2>
       <div class="profile-container">
         {{#each profiles}}
