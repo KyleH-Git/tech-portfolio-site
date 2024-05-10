@@ -1,7 +1,7 @@
 const Account = require('./Account');
 const Developer= require('./Developer')
 
-Account.hasMany(Developer, {
+Account.hasOne(Developer, {
     foreignKey: 'account_id',
     onDelete: 'CASCADE'
 });
