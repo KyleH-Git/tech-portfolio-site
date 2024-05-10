@@ -8,4 +8,14 @@ router.get('/', async (req, res) =>{
 router.get('/profile', async (req, res) =>{
     res.render('profile');
 });
+router.get('/createAccount', async (req, res) =>{
+    res.render('profile');
+});
+router.get('/login', async (req, res) =>{
+    res.render('profile');
+});
+router.get('/signup', async (req, res) =>{
+    res.render('signup');
+});
+
 module.exports = router;

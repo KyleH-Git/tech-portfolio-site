@@ -3,7 +3,6 @@ const Developer= require('./Developer')
 
 Account.hasOne(Developer, {
     foreignKey: 'account_id',
-    onDelete: 'CASCADE'
 });
 
 Developer.belongsTo(Account, {
