@@ -3,16 +3,22 @@ const sequelize= require('../config/connection');
 const bcrypt= require('bcrypt');
 const { Model, DataTypes}= require('sequelize');
 
-class User extends Model {}
+class Account extends Model {}
 
 
-User.init ({
+Account.init ({
     id: 
     {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
+    },
+    username:
+    {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
     },
     first_name:
     {
@@ -81,7 +87,7 @@ User.init ({
     timestamps: false, //if true would add a timestamp on the table
     freezeTableName: true, //prevents sequelize from changing the table name
     underscored: true, //tells sequelize to use snake case instead of camel case
-    modelName: 'user', //name of the model
+    modelName: 'account', //name of the model
 });
 
-module.exports = User;
+module.exports = Account;
