@@ -1,4 +1,66 @@
-<img src="{{photo-url}}" alt="Photo of the user">
-<h2>{{first-name last-name}}</h2>
-<p>{{stack-type}}</p>
-<p>{{years-coding}}</p>
+<div class="profile-container">
+    <div>
+        <img src="{{photo-url}}" alt="Photo of the user">
+        <button id="upload_widget" class="cloudinary-button">Upload photo</button>
+    </div>
+    {{!-- pull data from signup.handlebars user values --}}
+    <div>
+        <h2>Welcome, {{username}}!</h2>
+
+    </div>
+    <div>
+        <h3>A little bit about me</h3>
+        <p>Occupation: {{role}}</p>
+        <p>Stack specialty: {{stack-type}}</p>
+        <p>Years of experience: {{years-coding}}</p>
+        <div class="form-data">
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description">
+        </div>
+
+    </div>
+    <div>
+        <h3>Contact Me</h3>
+        <ul>
+            <li>Email: {{email}}</li>
+            <li>Portfolio: {{portfolio_url}}</li>
+        </ul>
+    </div>
+
+</div>
+<script src="/js/profile.js"></script>
+
+<form>
+    <div class="form-data">
+                <label for="role"></label>
+                <input type="text" name="role" id="role">
+            </div>
+            <div class="form-data">
+                <label for="portfolio_url"></label>
+                <input type="text" name="portfolio_url" id="portfolio_url">
+            </div>
+            <div>
+                <select name="code-type" id="code-type"></select>
+                <option value="">Choose a specialty:</option>
+                <option value="Front-End">Front-End Development</option>
+                <option value="Back-end">Back-End Development</option>
+            </div>
+
+            {{!-- <aside class="dropdown-menu">
+                <select name="code-languages" id="code-languages" multiple>
+                    <option value="">Select your code languages:</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="Nodejs">Nodejs</option>
+                    <option value="SQL">SQL</option>
+                    <option value="Express">Express</option>
+                    <option value="React">React</option>
+                    <option value="AI">AI</option>
+
+                </select>
+            </aside> --}}
+</form>

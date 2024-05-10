@@ -17,14 +17,15 @@ const loginFormHandler = async (event) => {
         // If successful, redirect the browser to the profile page
         document.location.replace('/profile');
       } else {
-        alert(response.statusText);
+        alert('Failed to log in. Double check your login information or sign up if you\'re a new user.');
       }
     }
   };
   
 
-
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
+  
+        
   

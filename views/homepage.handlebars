@@ -1,3 +1,68 @@
 {{#each user as |portfolio|}}
 {{> user-data}}
 {{/each}}
+
+{{!-- Section for the search form/ An app.post will need to be made in the backend to handle this logic--}}
+  <section class="devSearch" id="devSearch">
+    <h2>Search Developers</h2>
+    <form id="searchForm" method="post" action="/search-devs">
+      {{!-- Name Section --}}
+      <section>
+        <label for="name">Search Developers by Name:</label>
+        <select id= "name" name="name">
+          <option value="">Select a Developer</option>
+          {{#each names}}
+          <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+      </section>
+      {{!-- Years of experience Section --}}
+      <section>
+        <label for="yearsOfExperience">Years of Experience:</label>
+        <select name="yearsOfExperience" id="yearsOfExperience"> 
+          <option value="">Any</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10+">10+</option>
+        </select>
+      </section>
+      {{!-- Stack-type Section --}}
+      <section>
+        <label for="stackType">Stack-type:</label>
+        <select name="stackType" id="stackType">
+          <option value="">Any</option>
+          <option value="Frontend">Front-end</option>
+          <option value="Backend">Back-end</option>
+          <option value="Full-stack">Full-stack</option>
+        </select>
+      </section>
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  {{!-- Profile Section --}}
+
+    {{!-- Profile Section --}}
+    <section id="profileSection" class="profileSection">
+      <h2>Developer Profiles</h2>
+      <div class="profile-container">
+        {{#each profiles}}
+        <div class="profile">
+          <img src="{{this.photoUrl}}" alt="Profile Photo">
+          <p>Name: {{this.name}}</p>
+          <p>Years of Experience: {{this.yearsOfExperience}}</p>
+          <p>Stack: {{this.stackType}}</p>
+          <p><a href="{{this.portfolioUrl}}" target="_blank">Portfolio</a></p>
+        </div>
+        {{else}}
+        <h3>No profiles found</h3>
+        {{/each}}
+      </div>
+    </section>
