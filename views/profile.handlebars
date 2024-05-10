@@ -1,4 +1,27 @@
-<img src="{{photo-url}}" alt="Photo of the user">
-<h2>{{first-name last-name}}</h2>
-<p>{{stack-type}}</p>
-<p>{{years-coding}}</p>
+<div class="profile-container">
+    <div>
+        <img src="{{photo-url}}" alt="Photo of the user">
+        <button id="upload_widget" class="cloudinary-button">Upload photo</button>
+    </div>
+    {{!-- pull data from signup.handlebars user values --}}
+    <div>
+        <h2>Welcome, {{username}}!</h2>
+
+    </div>
+    <div>
+        <h3>A little bit about me</h3>
+        <p>Occupation: {{role}}</p>
+        <p>Stack specialty: {{stack-type}}</p>
+        <p>Years of experience: {{years-coding}}</p>
+        <p>Description: {{description}}</p>
+    </div>
+    <div>
+        <h3>Contact Me</h3>
+        <ul>
+            <li>Email: {{email}}</li>
+            <li>Portfolio: {{portfolio_url}}</li>
+        </ul>
+    </div>
+
+</div>
+<script src="/js/profile.js"></script>
