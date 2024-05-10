@@ -15,6 +15,11 @@ const loginHandler = async (event) => {
         document.location.replace('/');
       } else {
         alert('Failed to log in. Double check your login information or sign up if you\'re a new user.');
+        
       }
     }
   };
+
+  document.getElementById("signup").addEventListener("click", function () {
+   document.location.replace('/signup');
+  });
