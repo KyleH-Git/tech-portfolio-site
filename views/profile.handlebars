@@ -13,12 +13,14 @@
         <p>Occupation: {{role}}</p>
         <p>Stack specialty: {{stack-type}}</p>
         <p>Years of experience: {{years-coding}}</p>
+        {{!-- description section to allow for updated desc --}}
         <div class="form-data">
             <label for="description">Description:</label>
-            <input type="text" name="description" id="description">
+            <p id="description-display">{{description}}</p>
+            <button id="edit-btn">Edit</button>
         </div>
-
     </div>
+    {{!-- contact me section --}}
     <div>
         <h3>Contact Me</h3>
         <ul>
