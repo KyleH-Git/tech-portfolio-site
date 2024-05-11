@@ -13,12 +13,14 @@
 console.log('js reached')
 const profileFormHandler = async (event) => {
   event.preventDefault();
+  console.log(session.user_id);
   const first_name = document.querySelector('#firstName').value.trim();
   const last_name = document.querySelector('#lastName').value.trim();
   const years_coding = document.querySelector('#yearsCoding').value.trim();
   const stack_type = document.querySelector('#stackType').value.trim();
   const portfolio_url = document.querySelector('#portfolioUrl').value.trim();
   const photo_url = document.querySelector('#photoUrl').value.trim();
+
 
   console.log(first_name, last_name, years_coding, stack_type, portfolio_url, photo_url)
   const response = await fetch('/api/users/profile', {
