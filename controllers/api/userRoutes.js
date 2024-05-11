@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Account } = require('../../models');
+const { Account , Developer} = require('../../models');
 
 
 router.post('/createAccount', async (req, res) => {
@@ -12,6 +12,18 @@ router.post('/createAccount', async (req, res) => {
 
             res.status(200).json(userData);
         });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+router.post('/profile', async (req, res) => {
+    console.log('profile route reached');
+    try {
+        const profileData = await Developer.create(req.body);
+        console.log(profileData);
+        req.session.profile_data = profileData;
+        res.status(200).json(profileData);
     } catch (err) {
         res.status(400).json(err);
     }
