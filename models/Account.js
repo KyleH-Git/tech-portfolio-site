@@ -44,7 +44,7 @@ Account.init ({
     role: //we can use this role attribute to differentiate between the client and the developer
     {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
             isIn: [['client', 'developer']]
         }
