@@ -1,10 +1,50 @@
 const router = require('express').Router();
 const {Account, Developer} = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) =>{
-    res.render('homepage', {logged_in: req.session.logged_in});
+    try {
+        const developerData = await Developer.findAll({
+            include: {
+                model: Account,
+            }
+        });
+
+        const developers = developerData.map((developer) => developer.get({plain: true}));
+         res.render('homepage', {
+            developers,
+            logged_in: req.session.logged_in
+         });
+        }
+        catch (error) {
+            console.error('Could not get developers.', error);
+            res.status(500).json({ message: 'Failed to retrieve developers' });
+        }
 });
 
+router.get('/search/:name', async (req, res) =>{
+    try {
+        const developerData = await Developer.findAll({
+            where: {
+                last_name: req.params.name
+            },
+            include: {
+                model: Account,
+            }
+            
+        });
+
+        const developers = developerData.map((developer) => developer.get({plain: true}));
+         res.render('homepage', {
+            developers,
+            logged_in: req.session.logged_in
+         });
+        }
+        catch (error) {
+            console.error('Could not get developers.', error);
+            res.status(500).json({ message: 'Failed to retrieve developers' });
+        }
+});
 
 router.get('/developers', async (req, res) => {
     try {
@@ -47,7 +87,7 @@ router.get('/api/developers', async (req, res) => {
     }
 });
 
-router.get('/profile', async (req, res) =>{
+router.get('/profile', withAuth, async (req, res) =>{
     try {
         const accountData = await Account.findByPk(req.session.user_id, {
             include: {
