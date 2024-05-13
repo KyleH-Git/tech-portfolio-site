@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-  
+    
     // Collect values from the login form
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
@@ -17,16 +17,16 @@ const loginFormHandler = async (event) => {
       
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/profile');
+        document.location.replace('./');
       } else {
-        alert('Failed to log in. Double check your login information or sign up if you\'re a new user.');
+        alert('Failed to log in. Double check your login information or sign up if you are a new user.');
       }
     }
   };
   
 
   document
-    .querySelector('.profile-data')
+    .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
         
