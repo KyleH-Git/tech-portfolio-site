@@ -26,7 +26,7 @@ Developer.init ({
     stack_type: //front end or back end experience
     {
         type: DataTypes.ENUM,
-        values: ['frontend', 'backend', 'full-stack', ],
+        values: ['frontend', 'backend', 'full-stack', '' ],
         allowNull: true,
     },
     first_name:
