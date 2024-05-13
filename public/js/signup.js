@@ -6,7 +6,7 @@ console.log('javascript called');
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
   const role = document.querySelector('#userType').value.trim();
-
+  
   console.log(username, email, password, role);
   
   if (username && email && password && role) {
