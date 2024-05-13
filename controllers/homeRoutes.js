@@ -1,20 +1,22 @@
 const router = require('express').Router();
 const {Account, Developer} = require('../models');
 const withAuth = require('../utils/auth');
-
+const {Op} = require('sequelize');
 
 router.get('/', async (req, res) =>{
     console.log(req.query);
     
     try {
         let developerData;
+        let showBackButton = false;
+        let showForm = true;
         if((req.query.name === '' && req.query.yearsOfExperience === '' && req.query.stack_type === '') || Object.keys(req.query).length === 0){
             developerData = await Developer.findAll({
                 include: {
                     model: Account,
                 }
             });
-            
+           
         }
         else if(req.query.name){
             developerData = await Developer.findAll({
@@ -25,22 +27,33 @@ router.get('/', async (req, res) =>{
                     model: Account,
                 }
             });
+            showBackButton = true;
+            showForm = false;
         }
         else{
             developerData = await Developer.findAll({
                 where: {
-                    years_coding: req.query.yearsOfExperience,
-                    stack_type: req.query.stack_type
+                    [Op.or]: [
+                        {years_coding: req.query.yearsOfExperience},
+                        {stack_type: req.query.stack_type}
+                    ]
+                    
                 },
                 include: {
                     model: Account,
                 }
             });
+            showBackButton = true;
+            showForm = false;
         }
+        const backButtonUrl = req.headers.referer || '/';
         const developers = developerData.map((developer) => developer.get({plain: true}));
          res.render('homepage', {
             developers,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            backButtonUrl,
+            showBackButton,
+            showForm
          });
         
         }

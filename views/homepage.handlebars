@@ -1,6 +1,11 @@
 {{!-- Section for the search form/ An app.post will need to be made in the backend to handle this logic--}}
+  {{#if showBackButton}}
+  <a href="{{ backButtonUrl }}">Back</a>
+{{/if}}
+{{#if showForm}}
 <section class="dev-search" id="dev-search">
   <h2>Search Developers</h2>
+
   <form id="search-form" method="post" action="/search-devs">
     {{!-- Name Section --}}
     <section>
@@ -41,6 +46,7 @@
     </section>
     <button type="submit">Search</button>
   </form>
+  {{/if}}
 </section>
 
 {{!-- Profile Section --}}
