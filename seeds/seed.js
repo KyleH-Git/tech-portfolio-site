@@ -10,38 +10,39 @@ const seedDatabase= async ()=>{
     await sequelize.sync({force:true});
 
     //create an array of objects 
-    const accountsData= userData.map(user=> ({
-        username: user.username,
-        password:  user.password,
-        email: user.email,
-    }));
+    // const accountsData= userData.map(user=> ({
+    //     username: user.username,
+    //     password:  user.password,
+    //     email: user.email,
+    // }));
 
-    // filter for the developer role then create an array for dev users
-    const developerData= userData.filter (user => user.role === 'developer').map(user => ({
-        accountId: user.accountId,
-        photoUrl: user.photoUrl,
-        yearsCoding: user.yearsCoding,
-        stackType: user.stackType,
-        portfolioUrl: user.portfolioUrl
-    }));
+    // // filter for the developer role then create an array for dev users
+    // const developerData= userData.filter (user => user.role === 'developer').map(user => ({
+    //     accountId: user.accountId,
+    //     photoUrl: user.photoUrl,
+    //     yearsCoding: user.yearsCoding,
+    //     stackType: user.stackType,
+    //     portfolioUrl: user.portfolioUrl
+    // }));
 
-    // creates the account
-    const accounts= await Account.bulkCreate(accountsData, {
-        individualHooks:true, //makes sure to execute the hooks in the model, specifically our password
-        returning: true, // returns the tables
-    });
+    // // creates the account
+    // const accounts= await Account.bulkCreate(accountsData, {
+    //     individualHooks:true, //makes sure to execute the hooks in the model, specifically our password
+    //     returning: true, // returns the tables
+    // });
 
-    // links the account data to the developer
-    developerData.forEach(dev=> {
-        const account= accounts.find(account=> account.email === dev.email);
-        dev.accountId= account.id;
-    });
+    // // links the account data to the developer
+    // developerData.forEach(dev=> {
+    //     const account= accounts.find(account=> account.email === dev.email);
+    //     console.log(account);
+    //     dev.accountId= account.id;
+    // });
 
-    // creates the developer account
-    await Developer.bulkCreate(developerData, {
-        individualHooks: true,
-        returning: true
-    });
+    // // creates the developer account
+    // await Developer.bulkCreate(developerData, {
+    //     individualHooks: true,
+    //     returning: true
+    // });
     console.log('Database has been seeded');
     }
     catch (error) {
