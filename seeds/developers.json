@@ -4,8 +4,7 @@
         "last_name": "Johnson",
         "years_coding": "5",
         "stack_type": "full-stack",
-        "photo_url": ,
-        "portfolio_url": ,
+        
         "account_id": 1
     },
     {
@@ -13,8 +12,7 @@
         "last_name": "Rodriguez",
         "years_coding": "1",
         "stack_type": "frontend",
-        "photo_url": ,
-        "portfolio_url": ,
+        
         "account_id": 2
     },
     {
@@ -22,8 +20,7 @@
         "last_name": "Smith",
         "years_coding": "20",
         "stack_type": "backend",
-        "photo_url": ,
-        "portfolio_url": ,
+       
         "account_id": 3
     },
     {
@@ -31,8 +28,7 @@
         "last_name": "Patel",
         "years_coding": "5",
         "stack_type": "full-stack",
-        "photo_url": ,
-        "portfolio_url": ,
+        
         "account_id": 4
     },
     {
@@ -40,8 +36,7 @@
         "last_name": "Lee",
         "years_coding": "10",
         "stack_type": "frontend",
-        "photo_url": ,
-        "portfolio_url": ,
+       
         "account_id": 5
     },
     {
@@ -49,8 +44,7 @@
         "last_name": "Garcia",
         "years_coding": "15",
         "stack_type": "backend",
-        "photo_url": ,
-        "portfolio_url": ,
+        
         "account_id": 6
     },
     {
@@ -58,8 +52,7 @@
         "last_name": "Nguyen",
         "years_coding": "3",
         "stack_type": "full-stack",
-        "photo_url": ,
-        "portfolio_url": ,
+        
         "account_id": 7
     },
     {
@@ -67,8 +60,7 @@
         "last_name": "Kim",
         "years_coding": "1",
         "stack_type": "frontend",
-        "photo_url": ,
-        "portfolio_url": ,
+      
         "account_id": 8
     },
     {
@@ -76,17 +68,15 @@
         "last_name": "Martinez",
         "years_coding": "5",
         "stack_type": "backend",
-        "photo_url": ,
-        "portfolio_url": ,
+        
         "account_id": 9
-    }
+    },
     {
         "first_name": "Tim",
         "last_name": "Tester",
         "years_coding": "15",
         "stack_type": "full-stack",
-        "photo_url": ,
-        "portfolio_url": ,
+        "portfolio_url": "test-portfolio.com",
         "account_id": 10
-    },
+    }
 ]
