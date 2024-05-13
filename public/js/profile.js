@@ -1,13 +1,14 @@
-// creating a widget to upload images
-// var myWidget = cloudinary.createUploadWidget({
-//   cloudName: 'dwiyfuh6h',
-//   uploadPreset: 'vjiganr9'
-// }, (error, result) => {
-//   if (!error && result && result.event === "success") {
-//     console.log('Done! Here is the image info: ', result.info);
-//   }
-// });
-// adding functionality to the button to perform upload on click
+let photo_url;
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dwiyfuh6h',
+  uploadPreset: 'vjiganr9'
+}, (error, result) => {
+  if (!error && result && result.event === "success") {
+    console.log('Done! Here is the image info: ', result.info);
+    photo_url = result.info.url;
+  }
+});
+
 
 
 console.log('js reached')
@@ -19,7 +20,6 @@ const profileFormHandler = async (event) => {
   const years_coding = document.querySelector('#yearsCoding').value.trim();
   const stack_type = document.querySelector('#stackType').value.trim();
   const portfolio_url = document.querySelector('#portfolioUrl').value.trim();
-  const photo_url = document.querySelector('#photoUrl').value.trim();
 
 
   console.log(first_name, last_name, years_coding, stack_type, portfolio_url, photo_url)
@@ -39,10 +39,11 @@ const profileFormHandler = async (event) => {
 }
 
 document
-.querySelector('.profile-data')
-.addEventListener('submit', profileFormHandler);
+.querySelector('#form-submit')
+.addEventListener('click', profileFormHandler);
 
 
-// document.getElementById("upload_widget").addEventListener("click", function () {
-//   myWidget.open();
-// }, false);
+document.getElementById("upload_widget").addEventListener("click", function (event) {
+  event.preventDefault();
+  myWidget.open();
+}, false);

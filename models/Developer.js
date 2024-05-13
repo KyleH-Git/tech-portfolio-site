@@ -41,6 +41,7 @@ Developer.init ({
     },
     portfolio_url: //link to portfolio
     {
+        unique: true,
         type: DataTypes.STRING,
         allowNull: true,
     },
