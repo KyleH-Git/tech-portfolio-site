@@ -1,5 +1,6 @@
 [
     {
+
         "username": "BMacklin",
         "first_name": "Bert",
         "last_name": "Macklin",
@@ -14,11 +15,11 @@
         "last_name": "Lucan",
         "email": "myronlucan@gmail.com", 
         "password": "Isthisreallyyourpw123",
+        "role": "developer",
         "photo_url": "https://louisvillezoo.org/wp-content/uploads/2014/12/hdr_anm_orangutan.jpg",
         "years_coding": 1,
         "stack_type": "full-stack",
-        "portfolio_url": "https://mlucan2.github.io/myron-professional-portfolio/",
-        "role": "developer"
+        "portfolio_url": "https://mlucan2.github.io/myron-professional-portfolio/"
     },
     {
         "username": "JSnakehorn",

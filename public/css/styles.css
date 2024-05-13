@@ -166,11 +166,12 @@ body {
     width: 60%;
     height: 40px;
     margin-left: 30px;
-    
-    
-
 }
 
+/* Developer Profile Sign-up */
+form button{
+    
+}
 
 /* .login-container, .form-data{
     display: flex;
