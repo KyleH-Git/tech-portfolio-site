@@ -14,7 +14,6 @@ router.get('/', async (req, res) =>{
                     model: Account,
                 }
             });
-            
         }
         else if(req.query.name){
             developerData = await Developer.findAll({

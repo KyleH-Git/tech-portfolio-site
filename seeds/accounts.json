@@ -1,0 +1,63 @@
+[
+    {
+        "username": "BMacklin",
+        "email": "BMdues@fbi.com",
+        "password": "sickpassword123",
+        "role": "developer"
+    },
+    {
+        "username": "MLucan",
+        "email": "myronlucan@gmail.com",
+        "password": "Isthisreallyyourpw123",
+        "role": "developer"
+    },
+    {
+        "username": "JSnakehorn",
+        "email": "goodheavens@dustymail.com",
+        "password": "Wombats213",
+        "role": "client"
+    },
+    {
+        "username": ,
+        "email":,
+        "password":,
+        "role": 
+    },
+    {
+        "username": ,
+        "email":,
+        "password":,
+        "role": 
+    },
+    {
+        "username": ,
+        "email":,
+        "password":,
+        "role": 
+    },
+    {
+        "username": ,
+        "email":,
+        "password":,
+        "role": 
+    },
+    {
+        "username": ,
+        "email":,
+        "password":,
+        "role": 
+    },
+    {
+        "username": ,
+        "email":,
+        "password":,
+        "role": 
+    },
+    {
+        "username": ,
+        "email":,
+        "password":,
+        "role": 
+    },
+]
+
