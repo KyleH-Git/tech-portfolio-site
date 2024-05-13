@@ -20,6 +20,27 @@ router.get('/developers', async (req, res) => {
             developers,
             logged_in: req.session.logged_in
          });
+        }
+        catch (error) {
+            console.error('Could not get developers.', error);
+            res.status(500).json({ message: 'Failed to retrieve developers' });
+        }
+});
+
+router.get('/api/accounts', async (req, res) => {
+    try {
+        const accounts = await Account.findAll();
+        res.json(accounts); 
+    } catch (error) {
+        console.error('Could not get accounts:', error);
+        res.status(500).json({ message: 'Failed to retrieve accounts' });
+    }
+});
+
+router.get('/api/developers', async (req, res) => {
+    try {
+        const developers = await Developer.findAll();
+        res.json(developers);  
     } catch (error) {
         console.error('Could not get developers:', error);
         res.status(500).json({ message: 'Could not connect' });

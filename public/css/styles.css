@@ -3,13 +3,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 4px;
-    
 }
 
+.header-container h1{
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-right: 50px;
+}
 
 nav a{
     text-decoration: none;
-    color: black;
+    color: white;
     padding: 2px;
 
 }
@@ -20,6 +24,8 @@ nav a:hover, .header-nav a:focus{
 
 main{
     display:flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     align-items: flex-start;
     justify-content: space-between;
@@ -32,16 +38,33 @@ section{
 /* Search Section in Homepage */
 
 
+.search-profile-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-profile-container{
+    align-items: start;
+    padding: 20px;
+}
+
+.dev-search, .profile-section{
+    flex: 1 , 2;
+    margin: 10px;
+}
+
 .dev-search{
     padding-right: 20px;
     border: solid 3px black;
     padding: 5%;
+    background-color: rgb(19, 17, 38);
+    box-shadow: 0 2px 5px black;
 }
 
 form{
     display: flex;
     flex-direction: column;
-    
+   
 }
 
 input [type="text"], select{
@@ -54,11 +77,11 @@ input [type="text"], select{
     
 }
 
-button {
+.search-profile-container button {
     margin-left:35%;
     width: 25%;
     padding: 10px 20px;
-    background-color: grey;
+    background-color: white;
     color: black;
     border: none;
     cursor: pointer;
@@ -68,8 +91,87 @@ button {
 /* Profile Section in Homepage */
 
 .profile-section{
-    margin: 20px;
     padding: 20px;
-    background-color: pink;
+    background-color: rgb(19, 17, 38);
+    border: 3px solid black;
     
 }
+.profile-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.profile{
+    flex-basis: 30%;
+    margin: 10px;
+    padding: 20px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    border-radius: 8px;
+
+}
+.profile img{
+    width: 25%;
+    height: auto;
+    border-radius: 100%;
+}
+.profile p{
+    margin: 10px 0;
+    line-height: 2;
+}
+.profile a{
+    color: blue;
+}
+@media (max-width: 768px) {
+    .profile {
+        flex-basis: 100%;
+    }
+}
+
+/* Background */
+body {
+    height: 100vh;
+    font-family: 'Share Tech', sans-serif;
+    color: white;
+    text-shadow: 8px 8px 10px #0000008c;
+    background-color: #343a40;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
+}
+
+/* Login Section */
+
+.login-container, .signup-container, .profile-container{
+    background-color:  rgb(19, 17, 38);
+    padding: 5px 30px 30px 30px;  
+    border: solid 3px black;
+    box-shadow: 0 2px 5px black;
+}
+
+.login-container h2, .signup-container h2{
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+.form-data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    
+}
+
+.login-container button, .signup-container button{
+    width: 60%;
+    height: 40px;
+    margin-left: 30px;
+    
+    
+
+}
+
+
+/* .login-container, .form-data{
+    display: flex;
+} */
