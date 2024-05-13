@@ -1,8 +1,29 @@
 const router = require('express').Router();
-const {Account} = require('../models');
+const {Account, Developer} = require('../models');
 
 router.get('/', async (req, res) =>{
     res.render('homepage');
+});
+
+
+router.get('/developers', async (req, res) => {
+    try {
+        const developerData = await Developer.findAll({
+            include: {
+                model: Account,
+                attributes: ['id']
+            }
+        });
+
+        const developers = developerData.map((developer) => developer.get({plain: true}));
+         res.render('homepage', {
+            developers,
+            logged_in: req.session.logged_in
+         });
+    } catch (error) {
+        console.error('Could not get developers:', error);
+        res.status(500).json({ message: 'Could not connect' });
+    }
 });
 
 router.get('/profile', async (req, res) =>{
@@ -10,10 +31,21 @@ router.get('/profile', async (req, res) =>{
 });
 
 router.get('/login', async (req, res) =>{
-    res.render('login');
+    if (req.session.logged_in) {
+            res.redirect('/homepage');
+            return;
+        }
+    
+      res.render('login');
 });
+
 router.get('/signup', async (req, res) =>{
-    res.render('signup');
+    if (req.session.logged_in) {
+        res.redirect('/homepage');
+        return;
+    }
+      
+      res.render('signup');
 });
 
 module.exports = router;
