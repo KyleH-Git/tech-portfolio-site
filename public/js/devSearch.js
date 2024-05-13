@@ -1,4 +1,3 @@
-console.log('js reached')
 const profileFormHandler = async (event) => {
   event.preventDefault();
 
@@ -6,7 +5,7 @@ const profileFormHandler = async (event) => {
   const yearsOfExperience = document.querySelector('#yearsOfExperience').value.trim();
   const stack_type = document.querySelector('#stackType').value.trim();
 
-document.location.replace(`/search/${name}`)
+document.location.replace(`/?name=${name}&yearsOfExperience=${yearsOfExperience}&stack_type=${stack_type}`);
 
   console.log(name, yearsOfExperience, stack_type)
 
