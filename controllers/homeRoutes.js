@@ -48,7 +48,21 @@ router.get('/api/developers', async (req, res) => {
 });
 
 router.get('/profile', async (req, res) =>{
-    res.render('profile', {logged_in: req.session.logged_in});
+    try {
+        const accountData = await Account.findByPk(req.session.user_id, {
+            include: {
+                model: Developer,
+            }
+        });
+
+        const account = accountData.get({plain: true});
+        console.log(account);
+    res.render('profile', {logged_in: req.session.logged_in, ...account});
+    }
+    catch (error) {
+        console.error('Could not get profile.', error);
+        res.status(500).json({ message: 'Failed to retrieve profile information' });
+    }
 });
 
 router.get('/login', async (req, res) =>{
