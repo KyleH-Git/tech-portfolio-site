@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {Account, Developer} = require('../models');
 
 router.get('/', async (req, res) =>{
-    res.render('homepage');
+    res.render('homepage', {logged_in: req.session.logged_in});
 });
 
 
@@ -53,7 +53,7 @@ router.get('/profile', async (req, res) =>{
 
 router.get('/login', async (req, res) =>{
     if (req.session.logged_in) {
-            res.redirect('/homepage');
+            res.redirect('/');
             return;
         }
     
@@ -62,7 +62,7 @@ router.get('/login', async (req, res) =>{
 
 router.get('/signup', async (req, res) =>{
     if (req.session.logged_in) {
-        res.redirect('/homepage');
+        res.redirect('/');
         return;
     }
       

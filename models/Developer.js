@@ -1,6 +1,5 @@
 
 const sequelize= require('../config/connection');
-const bcrypt= require('bcrypt');
 const { Model, DataTypes}= require('sequelize');
 
 class Developer extends Model {}
@@ -54,13 +53,6 @@ Developer.init ({
     }
 },
 {
-    hooks:
-    {
-        async beforeCreate(newUserData){
-            newUserData.password = await bcrypt.hash(newUserData.password, 10);
-            return newUserData;
-        },
-    },
     sequelize, //links this model to the db connection
     timestamps: false, //if true would add a timestamp on the table
     freezeTableName: true, //prevents sequelize from changing the table name
