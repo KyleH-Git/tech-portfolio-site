@@ -18,46 +18,46 @@
         "role": "client"
     },
     {
-        "username": ,
-        "email":,
-        "password":,
-        "role": 
+        "username": "john_doe",
+        "email": "john.doe@emailprovider.com",
+        "password": "securePass!23",
+        "role": "developer"
     },
     {
-        "username": ,
-        "email":,
-        "password":,
-        "role": 
+        "username": "user123",
+        "email": "user123@example.com",
+        "password": "password123",
+        "role": "client"
     },
     {
-        "username": ,
-        "email":,
-        "password":,
-        "role": 
+        "username": "coolgirl89",
+        "email": "coolgirl89@mailservice.com",
+        "password": "myP@ssw0rd",
+        "role": "developer"
     },
     {
-        "username": ,
-        "email":,
-        "password":,
-        "role": 
+        "username": "techlover",
+        "email": "tech.love@emailhost.com",
+        "password": "1LoveT3ch!",
+        "role": "developer"
     },
     {
-        "username": ,
-        "email":,
-        "password":,
-        "role": 
+        "username": "soccerfanatic",
+        "email": "soccerfan12@emaildomain.com",
+        "password": "Goal!Soccer34",
+        "role": "developer"
     },
     {
-        "username": ,
-        "email":,
-        "password":,
-        "role": 
+        "username": "gamingwizard",
+        "email": "gameguru99@gamehub.com",
+        "password": "PlayH@rd56",
+        "role": "client"
     },
     {
-        "username": ,
-        "email":,
-        "password":,
-        "role": 
-    },
+        "username": "naturelover",
+        "email": "natureislife@emailserver.com",
+        "password": "GreenE@rth22",
+        "role": "client"
+    }
 ]
 
