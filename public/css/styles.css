@@ -31,10 +31,6 @@ main{
     justify-content: space-between;
 }
 
-section{
-    margin-right: 20px;
-}
-
 /* Search Section in Homepage */
 
 
@@ -98,8 +94,8 @@ input [type="text"], select{
 }
 .profile-container{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
+    flex-direction: column;
+    
 }
 
 .profile{
@@ -107,6 +103,7 @@ input [type="text"], select{
     margin: 10px;
     padding: 20px;
     background-color: aquamarine;
+    color: black;
     border: 2px solid black;
     border-radius: 8px;
 
@@ -166,11 +163,12 @@ body {
     width: 60%;
     height: 40px;
     margin-left: 30px;
-    
-    
-
 }
 
+/* Developer Profile Sign-up */
+form button{
+    
+}
 
 /* .login-container, .form-data{
     display: flex;

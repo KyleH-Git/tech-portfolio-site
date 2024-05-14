@@ -5,66 +5,69 @@
   </button>
 {{/if}}
 {{#if showForm}}
-<section class="dev-search" id="dev-search">
-  <h2>Search Developers</h2>
 
-  <form id="search-form" method="post" action="/search-devs">
-    {{!-- Name Section --}}
-    <section>
-      <label for="name">Search Developers by Name:</label>
-      <select id="name" name="name">
-        <option value="">Select a Developer</option>
-        {{#each developers}}
-        <option value="{{this.last_name}}">{{this.first_name}} {{this.last_name}}</option>
-        {{/each}}
-      </select>
-    </section>
-    {{!-- Years of experience Section --}}
-    <section>
-      <label for="yearsOfExperience">Years of Experience:</label>
-      <select name="yearsOfExperience" id="yearsOfExperience">
-                <option value="">Select desired # of years</option>
-                <option value="1">1+</option>
-                <option value="3">3+</option>
-                <option value="5">5+</option>
-                <option value="10">10+</option>
-                <option value="15">15+</option>
-                <option value="20">20+</option>
-      </select>
-    </section>
-    {{!-- Stack-type Section --}}
-    <section>
-      <label for="stack_type">Stack-type:</label>
-      <select name="stackType" id="stackType">
-        <option value="">Choose a stack type</option>
-        <option value="front-end">Front-end</option>
-        <option value="backend">Back-end</option>
-        <option value="full-stack">Full-stack</option>
-      </select>
-    </section>
-    <button type="submit">Search</button>
-  </form>
-  {{/if}}
-</section>
+<section class="search-profile-container">
+  <section class="dev-search" id="dev-search">
+    <h2>Search Developers</h2>
 
-{{!-- Profile Section --}}
-<section id="profile-section" class="profile-section">
-  <h2>Developer Profiles</h2>
-  <div class="profile-container">
-    {{#each developers}}
-    <div class="profile">
-      <img src="{{this.photo_url}}" alt="Profile Photo">
-      <p>Name: {{this.first_name}} {{this.last_name}}</p>
-      <p>Years of Experience: {{this.years_coding}}</p>
-      <p>Stack: {{this.stack_type}}</p>
-      <p><a href="{{this.portfolio_url}}" target="_blank">Portfolio</a></p>
+    <form id="search-form" method="post" action="/search-devs">
+      {{!-- Name Section --}}
+      <section>
+        <label for="name">Search Developers by Name:</label>
+        <select id="name" name="name">
+          <option value="">Select a Developer</option>
+          {{#each developers}}
+          <option value="{{this.last_name}}">{{this.first_name}} {{this.last_name}}</option>
+          {{/each}}
+        </select>
+      </section>
+      {{!-- Years of experience Section --}}
+      <section>
+        <label for="yearsOfExperience">Years of Experience:</label>
+        <select name="yearsOfExperience" id="yearsOfExperience">
+          <option value="">Any</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10+">10+</option>
+        </select>
+      </section>
+      {{!-- Stack-type Section --}}
+      <section>
+        <label for="stack_type">Stack-type:</label>
+        <select name="stackType" id="stackType">
+          <option value="">Choose a stack type</option>
+          <option value="front-end">Front-end</option>
+          <option value="backend">Back-end</option>
+          <option value="full-stack">Full-stack</option>
+        </select>
+      </section>
+      <button type="submit">Search</button>
+    </form>
+    {{/if}}
+  </section>
+
+  {{!-- Profile Section --}}
+  <section id="profile-section" class="profile-section">
+    <h2>Developer Profiles</h2>
+    <div class="profile-container">
+      {{#each developers}}
+      <div class="profile">
+        <img src="{{this.photo_url}}" alt="Profile Photo">
+        <p>Name: {{this.first_name}} {{this.last_name}}</p>
+        <p>Years of Experience: {{this.years_exp}}</p>
+        <p>Stack: {{this.stack_type}}</p>
+        <p><a href="{{this.portfolio_url}}" target="_blank">Portfolio</a></p>
+      </div>
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
-</section>
-
-
-
+  </section>
 </section>
 
 <script src="/js/devSearch.js"></script>
