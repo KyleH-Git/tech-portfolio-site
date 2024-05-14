@@ -1,71 +1,64 @@
-<div class="profile-container">
-    {{!-- pull data from signup.handlebars user values --}}
-    <div>
-        <h2>Welcome {{username}}</h2>
+<section class="create-dev">
+    <div class="profile-info">
+        {{!-- pull data from signup.handlebars user values --}}
+        <div>
+            <h2>Welcome {{username}}</h2>
+        </div>
+        <div>
+            <p>Occupation: {{role}}</p>
+            <p>Stack specialty: {{developer.stack_type}}</p>
+            <p>Years of experience: {{developer.years_coding}}</p>
+        </div>
+        <div class="contact">
+            <h3>Contact Me</h3>
+            <ul>
+                <li>Email: {{email}}</li>
+                <li>Portfolio: {{developer.portfolio_url}}</li>
+            </ul>
+        </div>
 
     </div>
-    <div>
-        <p>Occupation: {{role}}</p>
-        <p>Stack specialty: {{developer.stack_type}}</p>
-        <p>Years of experience: {{developer.years_coding}}</p>
-    </div>
-    <div>
-        <h3>Contact Me</h3>
-        <ul>
-            <li>Email: {{email}}</li>
-            <li>Portfolio: {{developer.portfolio_url}}</li>
-        </ul>
-    </div>
-
-</div>
 
 
-<form class="profile-data">
-    <div class="profile-form">
-        <h2>Input Developer Info</h2>
-        <div class="form-data">
-            <label for="firstName">First Name:</label>
-            <input type="text" name="firstName" id="firstName">
+    <form class="profile-data">
+        <div class="profile-form">
+            <h2>Input Developer info here!</h2>
+            <div class="form-data">
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="firstName">
+            </div>
+            <div class="form-data">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+            
+            <div class="form-data">
+                <label for="yearsExp">Years Coding:</label>
+                <select name="yearsExp" id="yearsCoding">
+                    <option value="1">1+</option>
+                    <option value="3">3+</option>
+                    <option value="5">5+</option>
+                    <option value="10">10+</option>
+                    <option value="15">15+</option>
+                    <option value="20">20+</option>
+                </select>
+            </div>
+            <div class="form-data">
+                <label for="stackType">Choose a stack type:</label>
+                <select name="stackType" id="stackType">
+                    <option value="frontend">Front-End Development</option>
+                    <option value="backend">Back-End Development</option>
+                    <option value="full-stack">Full-Stack Development</option>
+                </select>
+            </div>
+            <div class="cloud-button">
+                <button id="upload_widget" class="cloudinary-button">Upload Profile Picture</button>
+            </div> 
         </div>
-        <div class="form-data">
-            <label for="lastName">Last Name:</label>
-            <input type="text" name="lastName" id="lastName">
+        <div class="profile-submit-button">
+            <button type="submit" id="form-submit">Submit</button>
         </div>
-        
-        <div class="form-data">
-            <label for="yearsExp">Years Coding:</label>
-            <select name="yearsExp" id="yearsCoding">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10+">10+</option>
-            </select>
-        </div>
-        <div class="form-data">
-            <label for="stackType">Choose a stack type:</label>
-            <select name="stackType" id="stackType">
-                <option value="frontend">Front-End Development</option>
-                <option value="backend">Back-End Development</option>
-                <option value="full-stack">Full-Stack Development</option>
-            </select>
-        </div>
-        <div class="form-data">
-            <label for="portfolio_url">Portfolio URL:</label>
-            <input type="text" name="portfolioUrl" id="portfolioUrl">
-        </div>
-        <div class="form-data">
-            <button id="upload_widget" class="cloudinary-button">Upload profile picture</button>
-        </div>
-        
-        
-    </div>
-    <button type="submit" id="form-submit">Submit</button>
-</form>
+    </form>
+</section>
    
-<script src="/js/profile.js"></script>
+<script src="/js/profile.js"></script> 
